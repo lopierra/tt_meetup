@@ -14,6 +14,8 @@ Portland R Users Meetup - Tidy Tuesday Coding Club
         character](#question---choose-characters-that-appear-in-many-episodes-plot-line-count-vs-ratings-with-facet-by-character)
       - [Question - most common words spoken by the above
         characters?](#question---most-common-words-spoken-by-the-above-characters)
+      - [Future question: topic
+        analysis?](#future-question-topic-analysis)
 
 ## Group coding portion - Pierrette, Nell, Ted, Aaron
 
@@ -136,6 +138,10 @@ main_char <- line_count_characters %>%
   filter(total_episodes > 90) %>% 
   pull(character) 
 
+# add Todd Packer, just because
+
+main_char <- c(main_char, "Todd Packer")
+
 # use {tidytext} to unnest lines into words
 
 token_data <- mydata %>%
@@ -184,3 +190,8 @@ wordcount_data %>%
 
 I thought this was more illuminating than the ratings analysis,
 especially if you’re familiar with the show.
+
+Issue: Todd Packer doesn’t have a lot of lines, so his top\_n(15) words
+is actually a lot more than 15 due to ties. How to handle this?
+
+### Future question: topic analysis?
