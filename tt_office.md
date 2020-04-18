@@ -4,18 +4,7 @@ Portland R Users Meetup - Tidy Tuesday Coding Club
 
   - [Group coding portion - Pierrette, Nell, Ted,
     Aaron](#group-coding-portion---pierrette-nell-ted-aaron)
-      - [Install the needed packages](#install-the-needed-packages)
-      - [Read vignette & load data](#read-vignette-load-data)
-      - [Question: lines per character, does it correlate with
-        ratings?](#question-lines-per-character-does-it-correlate-with-ratings)
   - [Next steps - Pierrette](#next-steps---pierrette)
-      - [Question - choose characters that appear in many episodes, plot
-        line count vs ratings with facet by
-        character](#question---choose-characters-that-appear-in-many-episodes-plot-line-count-vs-ratings-with-facet-by-character)
-      - [Question - most common words spoken by the above
-        characters?](#question---most-common-words-spoken-by-the-above-characters)
-      - [Future question: topic
-        analysis?](#future-question-topic-analysis)
 
 ## Group coding portion - Pierrette, Nell, Ted, Aaron
 
@@ -60,6 +49,8 @@ line_count_characters %>%
   geom_smooth(method = "lm") +
   ggtitle("Michael's effect on IMDB ratings")
 ```
+
+    ## `geom_smooth()` using formula 'y ~ x'
 
 ![](tt_office_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
@@ -119,6 +110,8 @@ line_count_characters %>%
   facet_wrap(~character, scales = "free_x") +
   ggtitle("Effects of main characters' line counts on IMDB ratings")
 ```
+
+    ## `geom_smooth()` using formula 'y ~ x'
 
 <img src="tt_office_files/figure-gfm/unnamed-chunk-8-1.png" width="100%" />
 
@@ -194,4 +187,4 @@ especially if you’re familiar with the show.
 Issue: Todd Packer doesn’t have a lot of lines, so his top\_n(15) words
 is actually a lot more than 15 due to ties. How to handle this?
 
-### Future question: topic analysis?
+### Future direction: topic analysis?
